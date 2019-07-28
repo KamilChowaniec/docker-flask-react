@@ -5,6 +5,8 @@ services:
     restart: always
     build: ./BackEnd/
     image: flask-back
+    environment: 
+      - PYTHONUNBUFFERED=1
     volumes:
       - ./BackEnd:/app
   react:
@@ -20,5 +22,9 @@ services:
       - flask
     volumes:
       - ./FrontEnd:/app
+      - node_modules:/app/node_modules
+
+volumes:
+  node_modules:
   
   

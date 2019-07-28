@@ -8,7 +8,7 @@ class App extends Component {
     fetch('/elo')
       .then(res => res.text())
       .then(data => this.setState({ info: data }))
-      .catch(err => { })
+      .catch(err => console.log(err))
   }
 
   render() {
@@ -23,4 +23,3 @@ class App extends Component {
 }
 
 export default App;
- 
